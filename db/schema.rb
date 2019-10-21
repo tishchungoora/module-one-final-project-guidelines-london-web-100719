@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_105823) do
+ActiveRecord::Schema.define(version: 2019_10_21_110118) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string "topic"
+    t.boolean "is_online"
+    t.boolean "is_in_person"
+  end
 
   create_table "schools", force: :cascade do |t|
     t.string "name"
