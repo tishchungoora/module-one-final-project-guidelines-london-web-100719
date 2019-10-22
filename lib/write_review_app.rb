@@ -6,8 +6,8 @@
 class WriteReviewApp
 
     def initial_menu
-        puts "Please choose one of the review categories:"
-        puts "- school : select from a school"
+        puts "Please choose one of the options:"
+        puts "- school : select a school to review"
         puts "- exit : return to user menu"
     end
 
@@ -16,26 +16,30 @@ class WriteReviewApp
     end
 
     def school_menu
+        puts "Choose the school to review:"
         puts "- fs : Flatiron School"
         puts "- ga : General Assembly"
-        puts "- ms : Makers Academy"
+        puts "- ma : Makers Academy"
     end
 
     def get_school_input
         gets.chomp
+    end
 
-    def course_menu
+    def topic_menu
+        puts "Choose the course topic:"
         puts "- cs : cybersecurity"
         puts "- ds : data science"
         puts "- se : software engineering"
         puts "- ux : user experience"
     end
 
-    def get_course_input
+    def get_topic_input
         gets.chomp
     end
 
     def format_menu
+        puts "Choose the course format:"
         puts "- in-person : course delivered in-person"
         puts "- online : course delivered online"
     end
@@ -45,12 +49,12 @@ class WriteReviewApp
     end
 
     def get_rating
-        puts "Input a rating, 1-5 (5 being the highest)"
+        puts "Give a rating, 1-5 (5 being the highest)."
         gets.chomp
     end
 
     def get_content
-        puts "Input the review. Press enter when complete."
+        puts "Please type your review; press enter when complete."
         gets.chomp
     end
 
@@ -64,7 +68,8 @@ class WriteReviewApp
     end
 
     def invalid_input
-        puts "Your input is invalid. Please start again"
+        false
+        puts "Your input is invalid. Please start again."
     end
 
     def run_write_review_app
@@ -72,34 +77,37 @@ class WriteReviewApp
         initial_input = get_initial_input.downcase
         if initial_input == "school"
             
-            course_menu
-            course_input = get_course_input.downcase
-            if course_input == ("cs" || "ds" || "se" || "ux") 
-
-                school_menu
-                school_input = get_school_input.downcase
-                if school_input == ("fs" || "ga" || "ma")
+            school_menu
+            school_input = get_school_input.downcase
+            if school_input == "fs" || "ga" || "ma"
                 
+                topic_menu
+                topic_input = get_topic_input.downcase
+                if topic_input == "cs" || "ds" || "se" || "ux"
+                    
                     format_menu
                     format_input = get_format_input.downcase
-                    if format_input = ("in-person" || "online")
+                    if format_input = "in-person" || "online"
 
-                        rating_input = get_rating
-                        content_input = get_content
+                        rating_input = get_rating # run a check
+                        content_input = get_content # run a check
                         review_confirmation_input = get_review_confirmation.upcase
                         if review_confirmation_input == "Y"
 
                             puts "Hello World"
                             # school = School.all
-                            ##.find(school ) # some match for fs/ga/ma to the school instance
+                            ##.find(school ) # match fs/ga/ma to the school instance
                             # course = Course.all
-                            ##.find(course ) # some match for cs/ds/se/ux to the course instance
+                            ##.find(course ) # match cs/ds/se/ux to the course instance
                             # user = User.all.find(user.logged_in = true)
 
                             # Review.new(school: school, course: course, user: user, rating: rating_input, content: content_input)
 
-                        else review_confirmation_input == "N"
+                        elsif review_confirmation_input == "N"
                             return_to_main_menu
+                        else
+                            invalid_input
+                            run_write_review_app
                         end
 
                     else
@@ -125,7 +133,6 @@ class WriteReviewApp
         end
 
     end
-end
 end
 
 
