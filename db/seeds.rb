@@ -20,7 +20,7 @@ Course.create(topic: courses[1], is_online: Faker::Boolean.boolean(true_ratio: 0
 Course.create(topic: courses[2], is_online: Faker::Boolean.boolean(true_ratio: 0.5), is_in_person: Faker::Boolean.boolean(true_ratio: 0.5))
 Course.create(topic: courses[3], is_online: Faker::Boolean.boolean(true_ratio: 0.5), is_in_person: Faker::Boolean.boolean(true_ratio: 0.5))
 
-10.times do |count|
+100.times do |count|
     Review.create(school_id: School.all.sample.id, course_id: Course.all.sample.id, user_id: User.all.sample.id, rating: rand(1..5), content: Faker::Hacker.say_something_smart)
 end
 
