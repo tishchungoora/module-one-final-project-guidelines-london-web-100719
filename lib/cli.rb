@@ -4,7 +4,7 @@ class Cli
     end
 
     def login(username)
-        @user = User.find_by_username(username)
+        @user = User.find_or_create_by_username(username)
     end
 
     def greet
@@ -50,11 +50,11 @@ class Cli
         choice = menu
         case choice
         when "read"
-            # read... coming soon
+            puts "Launching feature tomorrow...!"
         when "submit"
             submit_review
         when "manage"
-            # manage... coming soon
+            puts "Launching feature tomorrow...!"
         when "exit"
             exit
         end
