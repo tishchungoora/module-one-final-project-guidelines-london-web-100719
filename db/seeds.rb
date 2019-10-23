@@ -6,7 +6,7 @@ Course.destroy_all
 Review.destroy_all
 
 10.times do |count|
-    User.create(username: "user#{count + 1}", password: Faker::Team.creature)
+    User.create(username: "username#{count + 1}")
 end
 
 schools = ["Flatiron School","Makers Academy","General Assembly"]
