@@ -1,4 +1,4 @@
-class UserAccountApp
+class UserManageAccount
     def user_account_greeting
         puts "Please use the following options to change your username, or password or return to the main user menu"
         puts "- username : change your username"
@@ -7,7 +7,7 @@ class UserAccountApp
     end
 
     def get_user_account_menu_input
-        gets.chomp
+        STDIN.gets.chomp
     end
 
     def user_account_menu_options(input)
@@ -32,7 +32,7 @@ class UserAccountApp
     end
 
     def get_updated_username_input
-        gets.chomp
+        STDIN.gets.chomp
     end
 
     def change_username
@@ -44,7 +44,7 @@ class UserAccountApp
     end
 
     def get_updated_password_input
-        gets.chomp
+        STDIN.gets.chomp
     end
 
     def change_password
@@ -61,6 +61,3 @@ class UserAccountApp
     end
 
 end
-
-### FOR TESTING
-# run_user_account_menu

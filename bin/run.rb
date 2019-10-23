@@ -1,9 +1,4 @@
-require_relative '../config/environment'
+require_relative '../config/environment.rb'
 
-
-ReadUpdateDeleteOwn.new.run_read_own_menu
-# run_main_menu
-
-ReadAllApp.new.run_view_all
-# run_main_menu
-WriteReviewApp.new.run_write_review_app
+cli = Cli.new
+cli.run

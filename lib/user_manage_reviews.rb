@@ -1,4 +1,4 @@
-class ReadUpdateDeleteOwn
+class UserManageReviews
     def read_own_greeting
         puts "Please select an option from below:"
         puts "- read : read all reviews you have previously submitted"
@@ -8,9 +8,9 @@ class ReadUpdateDeleteOwn
     end
 
     def get_read_own_menu_input
-        gets.chomp
+        STDIN.gets.chomp
     end
-
+    
     def read_own_menu_options(input)
         if input == "read"
             # Fires read_own method
@@ -40,11 +40,11 @@ class ReadUpdateDeleteOwn
     end
 
     def get_update_own_menu_input
-        gets.chomp
+        STDIN.gets.chomp
     end
 
     def get_updated_content
-        gets.chomp
+        STDIN.gets.chomp
     end
 
     def update_own
@@ -60,7 +60,7 @@ class ReadUpdateDeleteOwn
     end
 
     def get_delete_menu_input
-        gets.chomp
+        STDIN.gets.chomp
     end
 
     def delete_own

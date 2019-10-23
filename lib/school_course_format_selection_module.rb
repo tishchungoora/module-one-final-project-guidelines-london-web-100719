@@ -1,4 +1,4 @@
-module SchoolTopicFormatSelection
+module SchoolCourseFormatSelection
 
     def school_menu
         puts "Choose the school:"
@@ -12,20 +12,25 @@ module SchoolTopicFormatSelection
     end
 
     def return_school_id(school_name)
-        school = School.find_by(name: school_name)
+        school = School.find_by(name: "#{school_name}")
         school.id
     end
 
-    def topic_menu
-        puts "Choose the course topic:"
+    def course_menu
+        puts "Choose the course:"
         puts "- cs : cybersecurity"
         puts "- ds : data science"
         puts "- se : software engineering"
         puts "- ux : user experience"
     end
 
-    def get_topic_input
+    def get_course_input
         STDIN.gets.chomp
+    end
+
+    def return_course_id(course_name)
+        course = Course.find_by(name: "#{course_name}")
+        course.id
     end
 
     def format_menu

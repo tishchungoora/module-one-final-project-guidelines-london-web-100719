@@ -1,6 +1,5 @@
-require 'pry'
 
-class ReadAllApp
+class ReadAllReviews
     # include SchoolTopicFormatSelection
 
     ### TESTING BELOW ###
@@ -21,7 +20,7 @@ class ReadAllApp
     end
 
     def return_school_id(school_name)
-        school = School.find_by(name: school_name)
+        @school = School.find_by(name: school_name)
         school.id
     end
 
@@ -89,7 +88,7 @@ class ReadAllApp
             puts reviews
         when "ga"
             school_id = return_school_id("General Assembly")
-            reviews = Review.all.where(school_id: school_id))
+            reviews = Review.all.where(school_id: school_id)
             puts reviews
         when "ma"
             school_id = return_school_id("Makers Academy")
