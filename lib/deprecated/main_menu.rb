@@ -5,7 +5,7 @@ class MainMenu
         puts "========================================="
         puts "Please select from the following:"
         puts "- read : read reviews"
-        puts "- manage : create, read, update and delete your own reviews"    
+        puts "- manage : create, read, update and delete your own reviews"
     end
 
     def get_main_menu_input
