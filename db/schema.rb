@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_110816) do
+ActiveRecord::Schema.define(version: 2019_10_23_171943) do
 
   create_table "courses", force: :cascade do |t|
     t.string "topic"
-    t.boolean "is_online"
     t.boolean "is_in_person"
   end
 
@@ -33,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_110816) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
-    t.boolean "logged_in"
   end
 
 end
