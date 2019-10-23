@@ -1,4 +1,5 @@
 require_relative '../config/environment'
 
-run_main_menu
+
+ReadUpdateDeleteOwn.new.run_read_own_menu
 

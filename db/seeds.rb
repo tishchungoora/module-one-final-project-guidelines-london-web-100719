@@ -9,7 +9,7 @@ Review.destroy_all
     User.create(username: "user#{count + 1}", password: Faker::Team.creature, logged_in: Faker::Boolean.boolean(true_ratio: 0.5))
 end
 
-schools = ["Flatiron","Makers","General"]
+schools = ["Flatiron School","Makers Academy","General Assembly"]
 School.create(name: schools[0])
 School.create(name: schools[1])
 School.create(name: schools[2])
