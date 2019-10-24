@@ -23,4 +23,16 @@ class Review < ActiveRecord::Base
         reviews.map {|review| review.content}
     end
     
+    def self.find_review_by_id(rev_id)
+        self.find_by(id: rev_id)
+    end
+    
+    def update_review_content(content)
+        self.update(content: content)
+    end
+
+    def delete_review
+        self.destroy
+    end
+
 end
