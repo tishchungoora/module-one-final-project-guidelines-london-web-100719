@@ -8,4 +8,8 @@ class School < ActiveRecord::Base
         school.reviews.map {|review| review.content}
     end
 
+    def self.find_or_create(name)
+        self.find_or_create_by(name: name)
+    end
+
 end

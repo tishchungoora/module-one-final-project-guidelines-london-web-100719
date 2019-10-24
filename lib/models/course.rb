@@ -11,4 +11,8 @@ class Course < ActiveRecord::Base
         self.schools.uniq
     end
 
+    def self.find_or_create(topic)
+        self.find_or_create_by(topic: topic)
+    end
+
 end
