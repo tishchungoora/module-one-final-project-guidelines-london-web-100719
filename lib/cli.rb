@@ -37,19 +37,32 @@ class Cli
         puts Review.find_by_keyword(keyword)
     end
 
+    def exit
+        puts "Thank you, goodbye!"
+    end
+
+    def continue
+        puts "Would you like to continue (Y/N)?"
+        gets.chomp
+    end
+
     def run_read_reviews
-        choice = read_menu
-        case choice
-        when "school"
+        read_choice = read_menu
+        if read_choice == "exit"
+        elsif read_choice == "school"
             view_by_school
-        when "rating"
+        elsif read_choice == "rating"
             view_by_rating
-        when "keyword"
+        elsif read_choice == "keyword"
             search_by_keyword
-        when "exit"
-            read_menu
         end
-        read_menu
+
+        continue_choice = continue_prompt
+        if continue_choice == "y"
+            run_read_reviews
+        elsif continue_choice == "n"
+            exit
+        end
     end
         
 end
