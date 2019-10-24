@@ -4,7 +4,7 @@ class Cli
     end
 
     def login(username)
-        @user = User.find_or_create_by_username(username)
+        @user = User.find_by_username(username)
     end
 
     def greet
