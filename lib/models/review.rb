@@ -4,19 +4,23 @@ class Review < ActiveRecord::Base
     belongs_to :user
 
     def self.get_highest_reviews
-        self.order(rating: :desc).limit(10)
+        reviews = self.order(rating: :desc).limit(10)
+        reviews.map {|review| review.content}
     end
 
     def self.get_lowest_reviews 
-        self.order(rating: :asc).limit(10)
+        reviews = self.order(rating: :asc).limit(10)
+        reviews.map {|review| review.content}
     end
 
     def self.get_top_reviews
-        self.where("rating > ?", 3)
+        reviews = self.where("rating > ?", 3)
+        reviews.map {|review| review.content}
     end
 
     def self.find_by_keyword(keyword)
-        self.all.select {|review| review.content.include?(keyword)}
+        reviews = self.all.select {|review| review.content.include?(keyword)}
+        reviews.map {|review| review.content}
     end
-
+    
 end
