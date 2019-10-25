@@ -91,19 +91,14 @@ class Cli
         when "submit"
             submit_review
         when "manage"
-<<<<<<< HEAD
             puts "Launching feature tomorrow...!"
-=======
             run_manage_reviews
->>>>>>> 1ca3d530d9c3fbabece79043699ba217f4f5eb42
         when "exit"
             exit
         end
         exit
     end
 
-<<<<<<< HEAD
-=======
     ### Read all reviews
     def read_menu
         puts "Please select a viewing method:"
@@ -224,5 +219,4 @@ class Cli
         # end
     end
 
->>>>>>> 1ca3d530d9c3fbabece79043699ba217f4f5eb42
 end
